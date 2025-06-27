@@ -1,16 +1,24 @@
 ---
+import { Image } from 'astro:assets';
 
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+
+import sunsetImage from '../images/sunset.jpg'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="FrostFall Saga">
+    <div class="h-screen flex flex-col">
+        <!-- Navigation -->
+        <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
+
+        <!-- Image container that grows to fill remaining space -->
+        <div class="flex-1">
+            <Image
+                class="w-full h-full object-cover"
+                src={sunsetImage}
+                alt="Sunset over a snowy landscape"
+            />
+        </div>
+    </div>
+</BaseLayout>

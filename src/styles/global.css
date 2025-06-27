@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-serif: "Bellefair", "serif";
+  --font-sans: "Crimson Text", "sans-serif";
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: #ff9d33;
+  --color-primary-content: #fff8ec;
+  --color-secondary: #63b2c2;
+  --color-secondary-content: #f1fafa;
+  --color-accent: #70c0b9;
+  --color-accent-content: #295150;
+  --color-neutral: #0b1920;
+  --color-neutral-content: #b6e3eb;
+  --color-info: #caab45;
+  --color-info-content: #482c19;
+  --color-success: #939586;
+  --color-success-content: #353631;
+  --color-warning: #ffcf1c;
+  --color-warning-content: #974709;
+  --color-error: #7d847f;
+  --color-error-content: #181b18;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
