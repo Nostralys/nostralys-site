@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 @import "tailwindcss";
+
+/* @import "tw-animate-css"; */
+
+/* @custom-variant dark (&:is(.dark *)); */
 @plugin "daisyui";
 
 @theme {
@@ -41,5 +45,48 @@
   --border: 1px;
   --depth: 1;
   --noise: 1;
+}
+
+@utility glow-* {
+  --glow-color: --value(--color-*);
+  box-shadow: 0 0 13px 0 oklch(from var(--glow-color) l c h / .64);
+}
+
+.hover-opacity {
+  @apply opacity-50 hover:opacity-75;
+}
+
+/*
+ * Background images
+ */
+
+.bg-steam {
+  background-image: url('/images/logo/steam-icon.svg');
+  @apply bg-no-repeat -indent-[9999px];
+}
+
+.bg-kickstarter {
+  background-image: url('/images/logo/kickstarter-icon.svg');
+  @apply bg-no-repeat -indent-[9999px];
+}
+
+.bg-hero-banner {
+  background-image: url('/images/hero-banner.svg');
+  background-repeat: no-repeat;
+}
+
+.bg-stone-bevel-middle {
+  background-image: url('/images/ui/stone-octogone-middle.svg');
+  @apply bg-contain
+}
+
+.bg-stone-bevel-left {
+  background-image: url('/images/ui/stone-octogone-left.svg');
+  @apply bg-contain
+}
+
+.bg-stone-bevel-right {
+  background-image: url('/images/ui/stone-octogone-right.svg');
+  @apply bg-contain
 }
 
