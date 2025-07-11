@@ -1,0 +1,13 @@
+---
+const { class: className } = Astro.props
+---
+
+<section class:list={["flex items-center", className]}>
+    <div class="bg-stone-bevel-left w-8 h-full bg-no-repeat translate-x-0.5"/>
+
+    <div class="bg-stone-bevel-middle h-full">
+        <slot />
+    </div>
+
+    <div class="bg-stone-bevel-right w-8 h-full bg-no-repeat -translate-x-0.5"/>
+</section>

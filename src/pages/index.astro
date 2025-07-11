@@ -2,23 +2,41 @@
 import { Image } from 'astro:assets';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Navbar from '../components/Navbar.astro';
 
-import sunsetImage from '../images/sunset.jpg'
+import Navbar from '../components/Navbar.astro';
+import Carousel from '../components/carousel/Carousel.vue';
+
+import logoWithText from '../images/ui/logo-with-text.webp';
 ---
 
 <BaseLayout title="FrostFall Saga">
-    <div class="h-screen flex flex-col">
-        <!-- Navigation -->
-        <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
+    <!-- Navigation -->
+    <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
 
-        <!-- Image container that grows to fill remaining space -->
-        <div class="flex-1">
-            <Image
-                class="w-full h-full object-cover"
-                src={sunsetImage}
-                alt="Sunset over a snowy landscape"
-            />
+    <div class="w-screen h-screen -mt-20 flex flex-col justify-center items-center bg-hero-banner bg-cover bg-center">
+        <div class="translate-y-52 w-4/5">
+            <div class="flex justify-around translate-y-20 text-white">
+                <a
+                    class="bg-steam w-28 h-24 hover-opacity"
+                    href=""
+                    target="blank"
+                    title="Bientôt disponible sur Steam"
+                >
+                    Bientôt disponible sur Steam
+                </a>
+
+                <a
+                    class="bg-kickstarter w-28 h-24 hover-opacity"
+                    href=""
+                    target="blank"
+                    title="Soutenez-nous sur Kickstarter"
+                >
+                    Soutenez-nous sur Kickstarter
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- Media -->
+    <!-- <Carousel client:load /> -->
 </BaseLayout>
