@@ -71,8 +71,8 @@
 }
 
 .bg-hero-banner {
-  background-image: url('/images/hero-banner.svg');
-  background-repeat: no-repeat;
+  background-image: url('/images/hero-banner.png');
+  @apply bg-no-repeat;
 }
 
 .bg-stone-bevel-middle {
@@ -88,5 +88,10 @@
 .bg-stone-bevel-right {
   background-image: url('/images/ui/stone-octogone-right.svg');
   @apply bg-contain
+}
+
+.bg-parchment {
+  background-image: url('/images/ui/parchment-texture.png');
+  @apply bg-cover bg-blend-overlay bg-[#ddd2c5];
 }
 
