@@ -94,6 +94,10 @@
   @apply bg-cover bg-blend-overlay bg-[#ddd2c5];
 }
 
+.social-media-link {
+  @apply grow h-auto p-5 rounded-full transition-all duration-300 ease-in-out hover:fill-white;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
