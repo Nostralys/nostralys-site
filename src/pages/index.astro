@@ -1,59 +1,15 @@
 ---
-import { Image } from 'astro:assets';
-
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-import Navbar from '../components/Navbar.astro';
-
-import Pitch from '../components/pitch/Pitch.vue';
-import separator from '../images/ui/separator2.svg';
-import logoWithText from '../images/ui/logo-with-text.webp';
+import IntroSection from "../components/IntroSection.astro";
+import MediaSection from "../components/mediaSection/MediaSection.astro";
+import Navbar from "../components/Navbar.astro";
+import PitchSection from "../components/pitchSection/PitchSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="FrostFall Saga">
-    <!-- Navigation -->
-    <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
-
-    <div class="w-screen h-screen -mt-20 flex flex-col justify-center items-center bg-hero-banner bg-cover bg-center">
-        <div class="translate-y-40 w-4/5">
-            <Image class="w-96 h-auto m-auto" src={logoWithText} alt="FrostFall Saga logo with text" />
-
-            <div class="flex justify-around translate-y-8 text-white">
-                <a
-                    class="bg-steam w-28 h-24 hover-opacity"
-                    href=""
-                    target="blank"
-                    title="Bientôt disponible sur Steam"
-                >
-                    Bientôt disponible sur Steam
-                </a>
-
-                <a
-                    class="bg-kickstarter w-28 h-24 hover-opacity"
-                    href=""
-                    target="blank"
-                    title="Soutenez-nous sur Kickstarter"
-                >
-                    Soutenez-nous sur Kickstarter
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Media -->
-    <!-- <Carousel client:load /> -->
-    <!-- Pitch -->
-    <section class="flex flex-col justify-center items-center gap-8 bg-parchment bg-cover">
-        <div />
-
-        <div class="py-12 md:py-28 md:h-full m-auto w-4/6 md:w-4/6 lg:w-1/2 flex flex-col justify-center items-center gap-8">
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <Image class="h-8" src={separator} alt="separator" />
-
-            <Pitch client:load />
-        </div>
-
-        <div class="bg-parchment-border-bottom" />
-    </section>
+<BaseLayout title="Frostfall Saga">
+  <!-- Navigation -->
+  <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
+  <IntroSection />
+  <PitchSection />
+  <MediaSection />
 </BaseLayout>
