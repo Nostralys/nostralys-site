@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import separator from "@/images/ui/separator2.svg";
+import Pitch from "./Pitch.vue";
+---
+
+<section
+  id="pitch-section"
+  class="flex flex-col justify-center items-center gap-8 bg-parchment bg-cover"
+>
+  <div
+    class="py-12 md:py-28 md:h-full m-auto w-4/6 md:w-4/6 lg:w-1/2 flex flex-col justify-center items-center gap-8"
+  >
+    <p class="text-justify">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+
+    <Image class="h-8" src={separator} alt="separator" />
+
+    <Pitch client:load />
+  </div>
+
+  <div class="bg-parchment-border-bottom"></div>
+</section>
