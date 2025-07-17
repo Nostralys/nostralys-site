@@ -1,12 +1,18 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import NewsSection from "../components/newsSection/NewsSection.astro";
 import IntroSection from "../components/IntroSection.astro";
 import MediaSection from "../components/mediaSection/MediaSection.astro";
 import PitchSection from "../components/pitchSection/PitchSection.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Frostfall Saga">
   <IntroSection />
+
   <PitchSection />
+
   <MediaSection />
+
+  <NewsSection />
 </BaseLayout>
