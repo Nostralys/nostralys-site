@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("news");
+
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<h1>{post.data.title}</h1>
+
+<Image
+  src={post.data.image.src}
+  alt={post.data.image.alt}
+  width="1600"
+  height="900"
+/>
+
+<Content />
