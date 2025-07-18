@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gridGeneration from "@/images/gifs/grid-generation.gif";
+import gridGeneration from "@images/gifs/grid-generation.gif";
 import PitchSlide from "./PitchSlide.vue";
 
 const sections = [
