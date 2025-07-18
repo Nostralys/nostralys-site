@@ -1,12 +1,21 @@
 ---
-const { class: className } = Astro.props;
+interface Classes {
+  root?: string;
+  middle?: string;
+}
+
+interface Props {
+  classes?: Classes;
+}
+
+const { classes } = Astro.props;
 ---
 
-<section class:list={["flex items-center", className]}>
-  <div class="bg-stone-bevel-left w-8 h-full bg-no-repeat translate-x-0.5">
+<section class:list={["flex items-center", classes?.root]}>
+  <div class="bg-stone-bevel-left w-8 h-full bg-no-repeat translate-x-3.5">
   </div>
 
-  <div class="bg-stone-bevel-middle h-full">
+  <div class:list={["bg-stone-bevel-middle h-full", classes?.middle]}>
     <slot />
   </div>
 
