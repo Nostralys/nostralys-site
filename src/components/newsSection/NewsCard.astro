@@ -1,15 +1,26 @@
 ---
 import { Image } from "astro:assets";
+import type { InferEntrySchema } from "astro:content";
 
 import StoneButton from "@components/StoneButton.astro";
 
-const { class: className, slug, post } = Astro.props;
+interface Classes {
+  root?: string;
+}
+
+interface Props {
+  classes?: Classes;
+  id: string;
+  post: InferEntrySchema<"news">;
+}
+
+const { classes, id, post } = Astro.props;
 ---
 
 <article
   class:list={[
     "h-2/3 basis-1/3 bg-white relative flex flex-col bg-parchment rounded",
-    className,
+    classes?.root,
   ]}
 >
   <Image
@@ -38,7 +49,7 @@ const { class: className, slug, post } = Astro.props;
 
   <StoneButton
     class="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 hover:scale-110 transition-transform"
-    link={`/news/${slug}`}
+    link={`/news/${id}`}
     label="Voir plus"
   />
 </article>

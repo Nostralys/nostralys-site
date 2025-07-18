@@ -14,7 +14,7 @@ const posts = (await getCollection("news")).sort(
 >
   {
     posts.map((post) => (
-      <NewsCard class="max-w-80" slug={post.id} post={post.data} />
+      <NewsCard classes={{ root: "max-w-80" }} id={post.id} post={post.data} />
     ))
   }
 </section>
