@@ -1,19 +1,24 @@
 ---
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
+import Community from "@/components/Community.astro";
 
 const { title } = Astro.props;
 ---
 
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-        <title>{ title }</title>
-	</head>
-	<body class="relative">
-        <slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative">
+    <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
+    <slot />
+    <Community />
+    <Footer />
+  </body>
 </html>
-
