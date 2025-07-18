@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { InferEntrySchema } from "astro:content";
 
+import { formatDate } from "@lib/utils";
 import StoneButton from "@components/StoneButton.astro";
 
 interface Classes {
@@ -35,13 +36,7 @@ const { classes, id, post } = Astro.props;
     <h1>{post.title}</h1>
 
     <h3>
-      {
-        post.publishDate.toLocaleDateString("fr-FR", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        })
-      }
+      {formatDate(post.publishDate)}
     </h3>
 
     <p class="h-2/4">{post.description}</p>

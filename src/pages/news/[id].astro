@@ -1,6 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
+import { formatDate } from "@lib/utils";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("news");
@@ -15,13 +17,50 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<h1>{post.data.title}</h1>
+<BaseLayout
+  title={post.data.title}
+  classes={{
+    container:
+      "bg-[url('/images/backgrounds/campfire-sky.jpeg')] bg-cover py-32",
+  }}
+>
+  <article class="max-w-3xl mx-auto">
+    <div id="article-image" class="relative w-full h-96 bg-contain">
+      <aside
+        class="bg-scratched-parchment absolute bottom-[10%] left-0 -translate-x-1/4 bg-white flex flex-col items-start justify-center px-8 py-4"
+      >
+        <h1 class="text-2xl font-serif">{post.data.title}</h1>
 
-<Image
-  src={post.data.image.src}
-  alt={post.data.image.alt}
-  width="1600"
-  height="900"
-/>
+        <p class="text-sm text-gray-600">
+          {formatDate(post.data.publishDate)}
+        </p>
+      </aside>
+    </div>
 
-<Content />
+    <section
+      id="article-content"
+      class="py-8 px-6 bg-parchment flex flex-col gap-4"
+    >
+      <Content />
+    </section>
+  </article>
+</BaseLayout>
+
+<style define:vars={{ "image-url": `url(${post.data.image.src})` }}>
+  #article-image {
+    background-image: var(--image-url);
+    /* filter: grayscale(100%); */
+  }
+</style>
+
+<style is:global>
+  @reference "@styles/global.css";
+
+  #article-content :is(h1, h2, h3, h4, h5, h6) {
+    @apply text-2xl font-bold;
+  }
+
+  #article-content p {
+    @apply text-lg;
+  }
+</style>

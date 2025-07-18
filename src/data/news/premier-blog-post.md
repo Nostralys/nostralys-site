@@ -8,8 +8,6 @@ image:
 relatedPosts: []
 ---
 
-# Premier Blog Post
-
 This is the content of the premier blog post. It showcases the features of our new blogging platform, including easy content creation, image handling, and more.
 
 ## Features
