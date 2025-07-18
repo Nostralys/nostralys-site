@@ -1,10 +1,20 @@
 ---
+import "@/styles/global.css";
+
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
-import "../styles/global.css";
 import Community from "@/components/Community.astro";
 
-const { title } = Astro.props;
+interface Classes {
+  container?: string;
+}
+
+interface Props {
+  title: string;
+  classes?: Classes;
+}
+
+const { title, classes } = Astro.props;
 ---
 
 <html lang="fr">
@@ -17,7 +27,12 @@ const { title } = Astro.props;
   </head>
   <body class="relative">
     <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
-    <slot />
+
+    <!-- Main content area -->
+    <main class:list={["-mt-20", classes?.container]}>
+      <slot />
+    </main>
+
     <Community />
     <Footer />
   </body>
