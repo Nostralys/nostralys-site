@@ -1,13 +1,11 @@
 ---
 import { Image } from "astro:assets";
 
-import joinDiscordButton from "../images/ui/join-discord-button.webp";
+import joinDiscordButton from "@images/ui/join-discord-button.svg";
 ---
 
-<section
-  class="w-full h-1/2 flex items-center justify-center bg-parchment bg-cover gap-8 py-12"
->
-  <div class="w-2/3 flex">
+<section class="w-full h-1/2 flex items-center justify-center gap-8 py-12">
+  <div class="w-2/3 flex items-center">
     <div class="w-1/2 flex flex-col justify-center items-start p-8">
       <h3 class="text-3xl font-bold mb-4">Rejoins la communauté</h3>
       <p class="text-lg">
@@ -21,11 +19,15 @@ import joinDiscordButton from "../images/ui/join-discord-button.webp";
       </p>
     </div>
     <div class="w-1/2 h-2/3 flex flex-col justify-center items-center gap-4">
-      <Image
-        src={joinDiscordButton}
-        alt="Join our Discord community"
+      <a
+        href="https://discord.gg/DevyYZ9eTH"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Join our Discord community"
         class="w-[60%] h-auto"
-      />
+      >
+        <Image src={joinDiscordButton} alt="Join our Discord community" />
+      </a>
       <div class="w-[37.5%] flex justify-around gap-4">
         <a
           href="https://x.com/nostralys"

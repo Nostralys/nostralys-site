@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+
+import textLogoWithShadown from "@images/ui/text-logo-with-shadow.webp";
+import yggdrasilFirstPlan from "@images/ui/yggdrasil-first-plan.png";
+---
+
+<section
+  id="intro-section"
+  class="w-screen h-screen -mt-20 flex flex-col justify-center items-center relative overflow-hidden"
+>
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/videos/yggdrasil-and-floating-islands.mp4"
+    autoplay
+    loop
+    muted
+    playsinline></video>
+  <Image
+    id="parallax-yggdrasil"
+    class="absolute inset-0 w-full h-full object-cover"
+    src={yggdrasilFirstPlan}
+    alt="Yggdrasil branches"
+    style="will-change: transform;"
+  />
+  <div class="translate-y-40 w-4/5 relative z-10">
+    <Image
+      class="w-96 h-auto m-auto"
+      src={textLogoWithShadown}
+      alt="FrostFall Saga logo with text"
+    />
+
+    <div class="flex justify-around translate-y-8 text-white">
+      <a
+        class="bg-steam w-28 h-24 hover-opacity"
+        href=""
+        target="blank"
+        title="Bientôt disponible sur Steam"
+      >
+        Bientôt disponible sur Steam
+      </a>
+
+      <a
+        class="bg-kickstarter w-28 h-24 hover-opacity"
+        href=""
+        target="blank"
+        title="Soutenez-nous sur Kickstarter"
+      >
+        Soutenez-nous sur Kickstarter
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const img = document.getElementById("parallax-yggdrasil");
+    if (!img) return;
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      img.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+  });
+</script>

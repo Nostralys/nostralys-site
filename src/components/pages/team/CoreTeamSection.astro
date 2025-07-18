@@ -1,0 +1,55 @@
+---
+import MemberProfile from "./MemberProfile.astro";
+
+import alexPic from "@images/pics/alexandre-sparton.png";
+import kevinPic from "@images/pics/kevin-vendome.png";
+---
+
+<section
+  class="w-screen h-screen -mt-20 flex flex-col justify-center items-center gap-16 bg-[url('/images/backgrounds/campfire-sky.jpeg')] bg-cover bg-center"
+>
+  <div class="w-1/2 flex flex-col items-center text-center text-gray-100 mt-12">
+    <h1 class="text-3xl font-bold mb-4">Rassemblés autour d'un même rêve</h1>
+    <p class="w-2/3">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam illo
+      corporis ratione officiis repellat excepturi, labore cupiditate
+      voluptatibus quod eos veritatis iste possimus culpa. Facere natus
+      voluptate nobis ea odit! Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Cumque aspernatur excepturi reprehenderit dignissimos,
+      nihil beatae sapiente dolores quis velit molestias neque minima fuga ex
+      quas. Tenetur odit soluta numquam illum!
+    </p>
+  </div>
+  <div class="w-1/2 h-[45%] flex justify-around gap-28">
+    <MemberProfile
+      imageSrc={alexPic}
+      name="Alexandre Sparton"
+      description="test description"
+      classes={{
+        root: "gap-2 self-start w-1/3",
+        name: "text-gray-100",
+        description: "text-gray-300",
+      }}
+    />
+    <MemberProfile
+      imageSrc={alexPic}
+      name="Antoine Duquenne"
+      description="test description"
+      classes={{
+        root: "gap-2 self-end w-1/3",
+        name: "text-gray-100",
+        description: "text-gray-300",
+      }}
+    />
+    <MemberProfile
+      imageSrc={kevinPic}
+      name="Kévin Vendôme"
+      description="test description"
+      classes={{
+        root: "gap-2 self-start w-1/3",
+        name: "text-gray-100",
+        description: "text-gray-300",
+      }}
+    />
+  </div>
+</section>

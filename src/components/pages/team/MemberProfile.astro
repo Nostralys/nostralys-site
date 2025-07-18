@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+interface MemberProfileClasses {
+  root?: string;
+  name?: string;
+  description?: string;
+}
+
+interface Props {
+  imageSrc: ImageMetadata;
+  name: string;
+  description?: string;
+  classes?: MemberProfileClasses;
+}
+
+const { imageSrc, name, description, classes } = Astro.props;
+---
+
+<div class:list={["flex flex-col items-center", classes?.root || ""]}>
+  <Image src={imageSrc} alt="CEO" class="rounded-full aspect-square" />
+  <h2 class:list={["text-xl font-semibold", classes?.name || ""]}>{name}</h2>
+  <p class:list={["-mt-3", classes?.description || ""]}>{description}</p>
+</div>

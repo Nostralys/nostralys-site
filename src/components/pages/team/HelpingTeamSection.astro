@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+import MemberProfile from "./MemberProfile.astro";
+
+import alexisPic from "@images/pics/alexis-moins.jpeg";
+import separator from "@images/ui/separator.svg";
+---
+
+<section
+  class="w-screen py-20 flex flex-col justify-center items-center gap-16"
+>
+  <div class="w-1/2 flex flex-col items-center text-center">
+    <h1 class="text-3xl font-bold mb-4">
+      A tous ceux qui nous ont aidé sur le chemin
+    </h1>
+    <p class="w-2/3">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam illo
+      corporis ratione officiis repellat excepturi, labore cupiditate
+      voluptatibus quod eos veritatis iste possimus culpa. Facere natus
+      voluptate nobis ea odit! Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Cumque aspernatur excepturi reprehenderit dignissimos,
+      nihil beatae sapiente dolores quis velit molestias neque minima fuga ex
+      quas. Tenetur odit soluta numquam illum!
+    </p>
+  </div>
+  <Image class="w-1/2 h-10 -mt-8" src={separator} alt="separator" />
+  <div class="w-2/3 flex flex-wrap justify-between gap-16">
+    <MemberProfile
+      imageSrc={alexisPic}
+      name="Alexis Moins"
+      classes={{
+        root: "gap-2 w-1/6",
+      }}
+    />
+  </div>
+</section>

@@ -1,20 +1,24 @@
 ---
+import { Image } from "astro:assets";
+
 import StoneBevelContainer from "@components/StoneBevelContainer.astro";
+import crystalLogo from "@images/ui/crystal.webp";
 ---
 
-<header
-  class="w-fit sticky top-4 flex gap-0 items-center left-1/2 -translate-x-1/2 z-50"
->
+<header class="w-full sticky top-4 flex gap-0 justify-center items-center z-50">
+  <a href="/" class="h-auto w-8 absolute top-0 left-6">
+    <Image src={crystalLogo} alt="Crystal logo" />
+  </a>
   <StoneBevelContainer classes={{ root: "h-20" }}>
     <ul class="flex px-4 gap-8 text-white items-center h-full">
       <li>
-        <a href="#" title="FrostFall Saga">FrostFall Saga</a>
+        <a href="/" title="FrostFall Saga">FrostFall Saga</a>
       </li>
       <li>
         <a href="#news" title="Actualités">Actualités</a>
       </li>
       <li>
-        <a href="#team" title="L'équipe">L'équipe</a>
+        <a href="/team" title="L'équipe">L'équipe</a>
       </li>
     </ul>
   </StoneBevelContainer>

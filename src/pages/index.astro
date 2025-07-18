@@ -1,18 +1,19 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import NewsSection from "@components/newsSection/NewsSection.astro";
-import IntroSection from "@components/IntroSection.astro";
-import MediaSection from "@components/mediaSection/MediaSection.astro";
-import PitchSection from "@components/pitchSection/PitchSection.astro";
+import Community from "@components/Community.astro";
+import IntroSection from "@components/pages/index/IntroSection.astro";
+import MediaSection from "@components/pages/index/mediaSection/MediaSection.astro";
+import NewsSection from "@components/pages/index/newsSection/NewsSection.astro";
+import PitchSection from "@components/pages/index/pitchSection/PitchSection.astro";
 ---
 
 <BaseLayout title="Frostfall Saga">
   <IntroSection />
-
   <PitchSection />
-
   <MediaSection />
-
   <NewsSection />
+  <div class="bg-parchment">
+    <Community />
+  </div>
 </BaseLayout>
