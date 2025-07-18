@@ -1,12 +1,16 @@
 ---
-import alexisPic from "@/images/pics/alexis-moins.jpeg";
+import { Image } from "astro:assets";
+
 import MemberProfile from "./MemberProfile.astro";
+
+import alexisPic from "@/images/pics/alexis-moins.jpeg";
+import separator from "@/images/ui/separator.svg";
 ---
 
 <section
-  class="w-screen h-screen py-20 flex flex-col justify-center items-center gap-16 bg-gray-900"
+  class="w-screen py-20 flex flex-col justify-center items-center gap-16"
 >
-  <div class="w-1/2 flex flex-col items-center text-center text-slate-100">
+  <div class="w-1/2 flex flex-col items-center text-center">
     <h1 class="text-3xl font-bold mb-4">
       A tous ceux qui nous ont aidé sur le chemin
     </h1>
@@ -20,56 +24,14 @@ import MemberProfile from "./MemberProfile.astro";
       quas. Tenetur odit soluta numquam illum!
     </p>
   </div>
-  <div class="w-3/4 flex flex-wrap justify-around gap-32">
+  <Image class="w-1/2 h-10 -mt-8" src={separator} alt="separator" />
+  <div class="w-2/3 flex flex-wrap justify-between gap-16">
     <MemberProfile
       imageSrc={alexisPic}
       name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
-    />
-    <MemberProfile
-      imageSrc={alexisPic}
-      name="Alexis Moins"
-      class="gap-2 w-1/8"
+      classes={{
+        root: "gap-2 w-1/6",
+      }}
     />
   </div>
 </section>

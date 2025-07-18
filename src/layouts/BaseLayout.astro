@@ -2,7 +2,6 @@
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
 import "@/styles/global.css";
-import Community from "@/components/Community.astro";
 
 const { title } = Astro.props;
 ---
@@ -18,7 +17,6 @@ const { title } = Astro.props;
   <body class="relative">
     <Navbar class="h-16 bg-gray-800 flex-shrink-0" />
     <slot />
-    <Community />
     <Footer />
   </body>
 </html>

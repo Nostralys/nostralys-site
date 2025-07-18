@@ -1,10 +1,19 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+import Community from "@/components/Community.astro";
 import CoreTeamSection from "@/components/pages/team/CoreTeamSection.astro";
 import HelpingTeamSection from "@/components/pages/team/HelpingTeamSection.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import separator from "@/images/ui/separator.svg";
 ---
 
 <BaseLayout title="Frostfall Saga | Team page">
   <CoreTeamSection />
-  <HelpingTeamSection />
+  <div class="bg-parchment flex flex-col justify-center items-center">
+    <HelpingTeamSection />
+    <Image class="w-1/2 h-10 -mt-8" src={separator} alt="separator" />
+    <Community />
+  </div>
 </BaseLayout>
