@@ -3,7 +3,7 @@ title: Second Blog Post !
 description: This is a premier blog post that showcases the features of our new blogging platform.
 publishDate: 2023-07-11
 image:
-  src: /images/hero-banner.png
+  src: /images/backgrounds/yggdrasil-underground.jpg
   alt: Premier Blog Post Image
 relatedPosts: []
 ---

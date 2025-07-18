@@ -1,0 +1,19 @@
+---
+import StoneBevelContainer from "@components/StoneBevelContainer.astro";
+
+interface Props {
+  class?: string;
+  link: string;
+  label: string;
+}
+
+const { class: className, link, label } = Astro.props;
+---
+
+<a href={link} class:list={["inline-block", className]}>
+  <StoneBevelContainer
+    classes={{ root: "h-12", middle: "flex items-center justify-center" }}
+  >
+    <p class="text-white px-4">{label}</p>
+  </StoneBevelContainer>
+</a>
